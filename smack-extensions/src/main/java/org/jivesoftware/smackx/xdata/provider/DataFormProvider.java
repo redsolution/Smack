@@ -99,7 +99,7 @@ public class DataFormProvider extends ExtensionElementProvider<DataForm> {
         final FormField.Type type = FormField.Type.fromString(parser.getAttributeValue("", "type"));
 
         final FormField formField;
-        if (type == FormField.Type.fixed) {
+        if (type == FormField.Type.fixed && (var == null || var == "")) {
             formField = new FormField();
         } else {
             formField = new FormField(var);
