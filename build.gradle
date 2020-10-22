@@ -14,6 +14,7 @@ buildscript {
     }
 }
 apply plugin: 'org.kordamp.gradle.markdown'
+apply plugin: 'maven'
 
 apply from: 'version.gradle'
 
@@ -462,7 +463,7 @@ def getGitCommit() {
 
 def getAndroidRuntimeJar() {
 	def androidHome = getAndroidHome()
-	def androidJar = new File("$androidHome/platforms/android-$smackMinAndroidSdk/android.jar")
+	def androidJar = new File("$androidHome/platforms/android-21/android.jar")
 	if (androidJar.isFile()) {
 		return androidJar
 	} else {
